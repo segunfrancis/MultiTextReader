@@ -30,4 +30,8 @@ dependencies {
     implementation 'com.jakewharton:butterknife-compiler:10.1.0'
     // CameraKit dependency
     implementation 'com.wonderkiln:camerakit:0.13.1'
+    // FIrebase ML Kit
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-ml-vision:19.0.3'
 }
+apply plugin: 'com.google.gms.google-services'
