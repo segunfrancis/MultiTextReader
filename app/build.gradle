@@ -31,7 +31,7 @@ dependencies {
     // CameraKit dependency
     implementation 'com.wonderkiln:camerakit:0.13.1'
     // FIrebase ML Kit
-    implementation 'com.google.firebase:firebase-core:16.0.8'
-    implementation 'com.google.firebase:firebase-ml-vision:19.0.3'
+    implementation 'com.google.firebase:firebase-core:15.0.0'
+    implementation 'com.google.firebase:firebase-ml-vision:15.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

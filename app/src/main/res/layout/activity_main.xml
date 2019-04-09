@@ -17,4 +17,8 @@
         android:layout_gravity="bottom"
         android:text="Identify" />
 
+    <com.example.computer.multi_textreader.GraphicUtils.GraphicOverlay
+        android:id="@+id/graphic_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </FrameLayout>
