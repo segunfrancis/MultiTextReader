@@ -1,5 +1,6 @@
 package com.example.computer.multi_textreader;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.graphic_overlay)
     GraphicOverlay mGraphicOverlay;
+
+    String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(FirebaseVisionText firebaseVisionText) {
                 processTextRecognitionResult(firebaseVisionText);
+                Intent intent = new Intent(MainActivity.this, TextActivity.class);
+                intent.putExtra("text", text);
+                startActivity(intent);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -115,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
                 for (int k = 0; k < elements.size(); k++) {
                     GraphicOverlay.Graphic textGraphic = new TextGraphic(mGraphicOverlay, elements.get(k));
                     mGraphicOverlay.add(textGraphic);
+                    text = blocks.get(i).getText();
+                    mGraphicOverlay.clear();
                 }
             }
         }
